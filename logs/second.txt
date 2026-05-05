@@ -1,0 +1,124 @@
+⚠️ Warning: `options.` fields in the SuperLink connection configuration are deprecated. Use `--federation-config` with `flwr run` instead. Alternatively, permanently set your simulation configuration via `flwr federation simulation-config`.
+🎊 Successfully started run 14221861510878515514
+[92mINFO [0m:      Starting Flower Simulation
+[92mINFO [0m:      
+[92mINFO [0m:      ==============================================================================
+[92mINFO [0m:      SecureFlow AI — Federated Fraud Detection on PaySim
+[92mINFO [0m:      Network: 3 operator nodes  ·  5 training rounds
+[92mINFO [0m:      Privacy: differential privacy ENABLED + SecAgg+ encrypted aggregation
+[92mINFO [0m:      ==============================================================================
+[92mINFO [0m:      
+[92mINFO [0m:      [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+[92mINFO [0m:      Evaluation returned no results (`None`)
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 1]
+[92mINFO [0m:      Secure aggregation commencing.
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+2026-05-05 09:54:32,194	WARNING services.py:2155 -- WARNING: The object store is using /tmp instead of /dev/shm because /dev/shm has only 67108864 bytes available. This will harm performance! You may be able to free up space by deleting files in /dev/shm. If you are inside a Docker container, you can increase /dev/shm size by passing '--shm-size=2.08gb' to 'docker run' (or add it to the run_options list in a Ray cluster config). Make sure to set this to more than 30% of available RAM.
+/usr/local/python/3.12.1/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(ClientAppActor pid=13410)[0m [SecureFlow] Loading PaySim from data/paysim.csv
+[36m(ClientAppActor pid=13410)[0m [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      Secure aggregation completed.
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 2]
+[92mINFO [0m:      Secure aggregation commencing.
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      Secure aggregation completed.
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[36m(ClientAppActor pid=13410)[0m [SecureFlow] Loading PaySim from data/paysim.csv[32m [repeated 9x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 3]
+[92mINFO [0m:      Secure aggregation commencing.
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[36m(pid=gcs_server)[0m [2026-05-05 09:54:58,553 E 13032 13032] (gcs_server) gcs_server.cc:302: Failed to establish connection to the event+metrics exporter agent. Events and metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      Secure aggregation completed.
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[36m(ClientAppActor pid=13410)[0m [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)[32m [repeated 8x across cluster][0m
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 4]
+[92mINFO [0m:      Secure aggregation commencing.
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      Secure aggregation completed.
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 5]
+[92mINFO [0m:      Secure aggregation commencing.
+[92mINFO [0m:      configure_fit: strategy sampled 3 clients (out of 3)
+[36m(ClientAppActor pid=13410)[0m [SecureFlow] Loading PaySim from data/paysim.csv[32m [repeated 15x across cluster][0m
+[33m(raylet)[0m [2026-05-05 09:55:02,321 E 13167 13167] (raylet) main.cc:975: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[92mINFO [0m:      aggregate_fit: received 3 results and 0 failures
+[92mINFO [0m:      Secure aggregation completed.
+[92mINFO [0m:      configure_evaluate: strategy sampled 3 clients (out of 3)
+[92mINFO [0m:      aggregate_evaluate: received 3 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [SUMMARY]
+[92mINFO [0m:      Run finished 5 round(s) in 35.54s
+[92mINFO [0m:      History (loss, distributed):
+[92mINFO [0m:      		round 1: 0.6747186448838977
+[92mINFO [0m:      		round 2: 0.609868970182207
+[92mINFO [0m:      		round 3: 0.5017975933021969
+[92mINFO [0m:      		round 4: 0.5039996306101481
+[92mINFO [0m:      		round 5: 0.44150625334845645
+[92mINFO [0m:      	History (metrics, distributed, fit):
+[92mINFO [0m:      	{'accuracy': [(1, 0.8097208129185632),
+[92mINFO [0m:      	              (2, 0.8254776331429566),
+[92mINFO [0m:      	              (3, 0.8391876612646043),
+[92mINFO [0m:      	              (4, 0.854877801293016),
+[92mINFO [0m:      	              (5, 0.8627344678630446)],
+[92mINFO [0m:      	 'fpr': [(1, 0.1958622045966088),
+[92mINFO [0m:      	         (2, 0.17829322187162558),
+[92mINFO [0m:      	         (3, 0.16348021025454632),
+[92mINFO [0m:      	         (4, 0.14485446279934505),
+[92mINFO [0m:      	         (5, 0.136737042691522)],
+[92mINFO [0m:      	 'precision': [(1, 0.27470521969260847),
+[92mINFO [0m:      	               (2, 0.22624635098760285),
+[92mINFO [0m:      	               (3, 0.25312023281466356),
+[92mINFO [0m:      	               (4, 0.26798810538845014),
+[92mINFO [0m:      	               (5, 0.2719366600658434)],
+[92mINFO [0m:      	 'recall': [(1, 0.9363949997759756),
+[92mINFO [0m:      	            (2, 0.8857002041822151),
+[92mINFO [0m:      	            (3, 0.8857002041822151),
+[92mINFO [0m:      	            (4, 0.8554121088374416),
+[92mINFO [0m:      	            (5, 0.8554121088374416)]}
+[92mINFO [0m:      	History (metrics, distributed, evaluate):
+[92mINFO [0m:      	{'accuracy': [(1, 0.6392156862745098),
+[92mINFO [0m:      	              (2, 0.7254901960784313),
+[92mINFO [0m:      	              (3, 0.8411764705882353),
+[92mINFO [0m:      	              (4, 0.7450980392156863),
+[92mINFO [0m:      	              (5, 0.8235294117647058)],
+[92mINFO [0m:      	 'fpr': [(1, 0.3812568327095472),
+[92mINFO [0m:      	         (2, 0.28775634718524523),
+[92mINFO [0m:      	         (3, 0.15951724093580788),
+[92mINFO [0m:      	         (4, 0.2631135773173335),
+[92mINFO [0m:      	         (5, 0.1804291906213425)],
+[92mINFO [0m:      	 'precision': [(1, 0.13685247484658755),
+[92mINFO [0m:      	               (2, 0.17266822871706336),
+[92mINFO [0m:      	               (3, 0.24310776942355888),
+[92mINFO [0m:      	               (4, 0.16839368733325996),
+[92mINFO [0m:      	               (5, 0.22326649958228906)],
+[92mINFO [0m:      	 'recall': [(1, 1.0),
+[92mINFO [0m:      	            (2, 0.9523809523809523),
+[92mINFO [0m:      	            (3, 0.8554112554112554),
+[92mINFO [0m:      	            (4, 0.8857142857142856),
+[92mINFO [0m:      	            (5, 0.8857142857142856)]}
+[92mINFO [0m:      
+[92mINFO [0m:      
+[92mINFO [0m:      ==============================================================================
+[92mINFO [0m:      Training complete. Model deployed across operator nodes.
+[92mINFO [0m:      Total raw transactions shared between operators: 0 bytes
+[92mINFO [0m:      ==============================================================================
+[36m(ClientAppActor pid=13411)[0m [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)[32m [repeated 6x across cluster][0m
+[36m(ClientAppActor pid=13410)[0m [SecureFlow] Loading PaySim from data/paysim.csv[32m [repeated 5x across cluster][0m
+[92mINFO [0m:      

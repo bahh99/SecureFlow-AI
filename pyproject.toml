@@ -35,7 +35,7 @@ clientapp = "secureflow.core.client_app:app"
 [tool.flwr.app.config]
 # ── Federation topology ──
 num-clients = 3                  # Number of operator nodes (Freetown, Bo, Kenema)
-num-server-rounds = 5            # Number of federated training rounds
+num-server-rounds = 3            # Number of federated training rounds
 
 # ── Local training ──
 local-epochs = 3                 # Epochs of training per round per operator
@@ -53,7 +53,7 @@ reconstruction-threshold = 2     # Min shares needed to reconstruct
 max-weight = 50000
 
 # ── Demo mode ──
-is-demo = false                   # Use 5K rows per operator (fast); false = 50K
+is-demo = true                   # Use 5K rows per operator (fast); false = 50K
 
 
 #######################################################################

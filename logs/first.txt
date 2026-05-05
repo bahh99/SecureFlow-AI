@@ -1,0 +1,149 @@
+cyber@Umarus-MacBook-Pro secureflow-paysim % flwr run . local-simulation --stream
+2026-05-05 10:40:00.825352: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading project configuration... 
+Success
+2026-05-05 10:40:12.550096: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO :      
+INFO :      ==============================================================================
+INFO :      SecureFlow AI — Federated Fraud Detection on PaySim
+INFO :      Network: 3 operator nodes  ·  5 training rounds
+INFO :      Privacy: differential privacy ENABLED + SecAgg+ encrypted aggregation
+INFO :      ==============================================================================
+INFO :      
+INFO :      [INIT]
+INFO :      Using initial global parameters provided by strategy
+INFO :      Starting evaluation of initial global parameters
+INFO :      Evaluation returned no results (`None`)
+INFO :      
+INFO :      [ROUND 1]
+INFO :      Secure aggregation commencing.
+INFO :      configure_fit: strategy sampled 3 clients (out of 3)
+(pid=93705) 2026-05-05 10:40:33.696657: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+(pid=93705) To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+(ClientAppActor pid=93710) [SecureFlow] Loading PaySim from data/paysim.csv
+(ClientAppActor pid=93711) WARNING :   Potential overflow warning: the provided weight (13333) exceeds the specified max_weight (9000). This may lead to overflow issues.
+(pid=93708) 2026-05-05 10:40:33.839268: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations. [repeated 7x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)
+(pid=93708) To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags. [repeated 7x across cluster]
+(ClientAppActor pid=93711) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+(ClientAppActor pid=93712) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 2x across cluster]
+INFO :      aggregate_fit: received 3 results and 0 failures
+INFO :      Secure aggregation completed.
+INFO :      configure_evaluate: strategy sampled 3 clients (out of 3)
+INFO :      aggregate_evaluate: received 3 results and 0 failures
+INFO :      
+INFO :      [ROUND 2]
+INFO :      Secure aggregation commencing.
+INFO :      configure_fit: strategy sampled 3 clients (out of 3)
+(ClientAppActor pid=93712) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1) [repeated 2x across cluster]
+(ClientAppActor pid=93710) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 4x across cluster]
+(ClientAppActor pid=93710) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+(ClientAppActor pid=93712) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 2x across cluster]
+(ClientAppActor pid=93710) WARNING :   Potential overflow warning: the provided weight (13333) exceeds the specified max_weight (9000). This may lead to overflow issues. [repeated 3x across cluster]
+(ClientAppActor pid=93712) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+INFO :      aggregate_fit: received 3 results and 0 failures
+INFO :      Secure aggregation completed.
+INFO :      configure_evaluate: strategy sampled 3 clients (out of 3)
+INFO :      aggregate_evaluate: received 3 results and 0 failures
+INFO :      
+INFO :      [ROUND 3]
+INFO :      Secure aggregation commencing.
+INFO :      configure_fit: strategy sampled 3 clients (out of 3)
+(ClientAppActor pid=93710) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 4x across cluster]
+(ClientAppActor pid=93711) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+(ClientAppActor pid=93711) WARNING :   Potential overflow warning: the provided weight (13333) exceeds the specified max_weight (9000). This may lead to overflow issues. [repeated 3x across cluster]
+(ClientAppActor pid=93711) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+(ClientAppActor pid=93712) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 2x across cluster]
+INFO :      aggregate_fit: received 3 results and 0 failures
+INFO :      Secure aggregation completed.
+INFO :      configure_evaluate: strategy sampled 3 clients (out of 3)
+INFO :      aggregate_evaluate: received 3 results and 0 failures
+INFO :      
+INFO :      [ROUND 4]
+INFO :      Secure aggregation commencing.
+INFO :      configure_fit: strategy sampled 3 clients (out of 3)
+(ClientAppActor pid=93710) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1) [repeated 2x across cluster]
+(ClientAppActor pid=93710) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 4x across cluster]
+(ClientAppActor pid=93710) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+(ClientAppActor pid=93712) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 2x across cluster]
+(ClientAppActor pid=93710) WARNING :   Potential overflow warning: the provided weight (13333) exceeds the specified max_weight (9000). This may lead to overflow issues. [repeated 3x across cluster]
+(ClientAppActor pid=93711) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+INFO :      aggregate_fit: received 3 results and 0 failures
+INFO :      Secure aggregation completed.
+INFO :      configure_evaluate: strategy sampled 3 clients (out of 3)
+INFO :      aggregate_evaluate: received 3 results and 0 failures
+INFO :      
+INFO :      [ROUND 5]
+INFO :      Secure aggregation commencing.
+INFO :      configure_fit: strategy sampled 3 clients (out of 3)
+(ClientAppActor pid=93710) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 4x across cluster]
+(ClientAppActor pid=93712) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+(ClientAppActor pid=93711) WARNING :   Potential overflow warning: the provided weight (13333) exceeds the specified max_weight (9000). This may lead to overflow issues. [repeated 3x across cluster]
+(ClientAppActor pid=93711) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1)
+(ClientAppActor pid=93712) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 2x across cluster]
+INFO :      aggregate_fit: received 3 results and 0 failures
+INFO :      Secure aggregation completed.
+INFO :      configure_evaluate: strategy sampled 3 clients (out of 3)
+INFO :      aggregate_evaluate: received 3 results and 0 failures
+INFO :      
+INFO :      [SUMMARY]
+INFO :      Run finished 5 round(s) in 192.42s
+INFO :      History (loss, distributed):
+INFO :                  round 1: 0.37892093204852173
+INFO :                  round 2: 0.26872313566177897
+INFO :                  round 3: 0.2765602522863532
+INFO :                  round 4: 0.27613303121530786
+INFO :                  round 5: 0.23912559215377713
+INFO :          History (metrics, distributed, fit):
+INFO :          {'accuracy': [(1, 0.9473105178954209),
+INFO :                        (2, 0.9493104979184172),
+INFO :                        (3, 0.9562088557337286),
+INFO :                        (4, 0.9609078384333133),
+INFO :                        (5, 0.9587083133400821)],
+INFO :           'fpr': [(1, 0.052335547317423584),
+INFO :                   (2, 0.05023442047302935),
+INFO :                   (3, 0.04141755603618141),
+INFO :                   (4, 0.03324539339600534),
+INFO :                   (5, 0.03932398079899648)],
+INFO :           'precision': [(1, 0.7767452062711674),
+INFO :                         (2, 0.7902040065235931),
+INFO :                         (3, 0.8162560700876365),
+INFO :                         (4, 0.8439833401928896),
+INFO :                         (5, 0.8250971859055864)],
+INFO :           'recall': [(1, 0.9450594922951676),
+INFO :                      (2, 0.9463325216576046),
+INFO :                      (3, 0.9430087532940296),
+INFO :                      (4, 0.9308415363208439),
+INFO :                      (5, 0.9486353332066799)]}
+INFO :          History (metrics, distributed, evaluate):
+INFO :          {'accuracy': [(1, 0.9565086982603479),
+INFO :                        (2, 0.9638072385522896),
+INFO :                        (3, 0.9344131173765247),
+INFO :                        (4, 0.9434113177364527),
+INFO :                        (5, 0.9573085382923415)],
+INFO :           'fpr': [(1, 0.0033375540173496295),
+INFO :                   (2, 0.021469638904706996),
+INFO :                   (3, 0.06606838464635355),
+INFO :                   (4, 0.05844702058189219),
+INFO :                   (5, 0.01835792332585899)],
+INFO :           'precision': [(1, 0.977248148403033),
+INFO :                         (2, 0.8895026752594682),
+INFO :                         (3, 0.7326164345653973),
+INFO :                         (4, 0.7601375187831063),
+INFO :                         (5, 0.8970592574269994)],
+INFO :           'recall': [(1, 0.7471694164792817),
+INFO :                      (2, 0.8869379351335834),
+INFO :                      (3, 0.9364460708909992),
+INFO :                      (4, 0.95256143807184),
+INFO :                      (5, 0.8302317511394756)]}
+INFO :      
+INFO :      
+INFO :      ==============================================================================
+INFO :      Training complete. Model deployed across operator nodes.
+INFO :      Total raw transactions shared between operators: 0 bytes
+INFO :      ==============================================================================
+(ClientAppActor pid=93712) [Defense] Differential privacy applied (noise_std=0.05, clip=0.1) [repeated 2x across cluster]
+(ClientAppActor pid=93712) [SecureFlow] Loading PaySim from data/paysim.csv [repeated 3x across cluster]
+(ClientAppActor pid=93712) WARNING :   Potential overflow warning: the provided weight (13332) exceeds the specified max_weight (9000). This may lead to overflow issues. [repeated 2x across cluster]
+cyber@Umarus-MacBook-Pro secureflow-paysim % 
