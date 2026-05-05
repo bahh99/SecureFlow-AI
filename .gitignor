@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+.vscode/
+.idea/
+*.swp
+.DS_Store
+*.log
+
+# PaySim dataset — too large + licensed, never commit
+data/*.csv
+data/*.zip
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Test / cache
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/

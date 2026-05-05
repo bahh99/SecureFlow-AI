@@ -1,0 +1,80 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "secureflow-ai"
+version = "0.3.0"
+description = "Privacy-preserving federated fraud detection for mobile money"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    { name = "Umaru Bah", email = "r11rbq@inf.elte.hu" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "flwr[simulation]>=1.17.0",
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["secureflow"]
+
+# ── Flower app configuration ────────────────────────────────────────────────
+
+[tool.flwr.app]
+publisher = "secureflow-ai"
+
+[tool.flwr.app.components]
+serverapp = "secureflow.core.server_app:app"
+clientapp = "secureflow.core.client_app:app"
+
+[tool.flwr.app.config]
+# ── Federation topology ──
+num-clients = 3                  # Number of operator nodes (Freetown, Bo, Kenema)
+num-server-rounds = 5            # Number of federated training rounds
+
+# ── Local training ──
+local-epochs = 3                 # Epochs of training per round per operator
+learning-rate = 0.001            # Adam learning rate
+batch-size = 64                  # Local batch size
+
+# ── Differential privacy ──
+dp-enabled = true                # Apply DP to gradients before sharing
+dp-noise-std = 0.05              # Gaussian noise standard deviation
+dp-clip-value = 0.1              # Gradient clipping threshold
+
+# ── SecAgg+ encrypted aggregation ──
+num-shares = 3                   # Secret-sharing parameter
+reconstruction-threshold = 2     # Min shares needed to reconstruct
+max-weight = 50000
+
+# ── Demo mode ──
+is-demo = false                   # Use 5K rows per operator (fast); false = 50K
+
+
+#######################################################################
+# CONFIGURATION MIGRATION NOTICE:
+#
+# What was previously called "federation config" for SuperLink
+# connections in pyproject.toml has been renamed and moved.
+#
+# These settings are now **SuperLink connection configuration**
+# and are defined in the Flower configuration file.
+#
+# The entries below are commented out intentionally and are kept
+# only as a migration reference.
+#
+# Docs: https://flower.ai/docs/framework/ref-flower-configuration.html
+#######################################################################
+
+# [tool.flwr.federations]
+# default = "local-simulation"
+
+# [tool.flwr.federations.local-simulation]
+# options.num-supernodes = 3       # Match num-clients above
+# options.backend.client-resources.num-cpus = 1
+# options.backend.init-args.object-store-memory = 78643200
