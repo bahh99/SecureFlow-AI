@@ -68,8 +68,8 @@ All settings live in `pyproject.toml` under `[tool.flwr.app.config]`:
 | Setting | Default | What it does |
 |---|---|---|
 | `num-clients` | 3 | Operator nodes in the federation |
-| `num-server-rounds` | 3 | Training rounds per simulation |
-| `local-epochs` | 2 | Local training epochs per round |
+| `num-server-rounds` | 5 | Training rounds per simulation |
+| `local-epochs` | 3 | Local training epochs per round |
 | `dp-enabled` | true | Apply differential privacy to gradients |
 | `dp-noise-std` | 0.05 | DP noise std (higher = more private) |
 | `dp-clip-value` | 0.1 | Gradient clip threshold |
